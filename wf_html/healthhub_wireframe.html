@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HealthHub – Wireframe</title>
+<style>
+:root{--ink:#222;--mid:#666;--line:#999;--fill:#e6e6e6;--bg:#fafafa;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Courier New",ui-monospace,monospace;background:var(--bg);color:var(--ink);line-height:1.5;font-size:15px}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:var(--card);border-bottom:2px solid var(--ink)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:18px;text-decoration:none}
+.logo i{width:26px;height:26px;border:2px solid var(--ink);display:inline-block}
+.links{display:flex;gap:24px;list-style:none}
+.links a{text-decoration:none;color:var(--mid);padding:4px 0}
+.links a.on{color:var(--ink);font-weight:700;border-bottom:2px solid var(--ink)}
+.burger{display:none;background:none;border:2px solid var(--ink);width:38px;height:34px;font:inherit;cursor:pointer}
+/* pages */
+.page{display:none;padding:40px 0 56px}.page.on{display:block}
+h1{font-size:30px;line-height:1.2;margin-bottom:14px}
+h2{font-size:22px;margin-bottom:14px}
+h3{font-size:17px;margin-bottom:6px}
+p{color:var(--mid);margin-bottom:14px;max-width:70ch}
+.ph{background:var(--fill);border:2px dashed var(--line);display:flex;align-items:center;justify-content:center;color:var(--mid);text-align:center;position:relative;min-height:120px}
+.ph.x{background:linear-gradient(to top right,transparent calc(50% - 1px),var(--line),transparent calc(50% + 1px)),linear-gradient(to bottom right,transparent calc(50% - 1px),var(--line),transparent calc(50% + 1px)),var(--fill)}
+.ph.x span{background:var(--fill);padding:2px 8px}
+.btn{display:inline-block;border:2px solid var(--ink);padding:9px 20px;text-decoration:none;font-weight:700;background:var(--card);cursor:pointer;font:inherit;font-weight:700}
+.btn.fill{background:var(--ink);color:#fff}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.hero{display:flex;gap:40px;align-items:center;margin-bottom:48px}
+.hero>*{flex:1}.hero .ph{min-height:300px}
+.card{background:var(--card);border:2px solid var(--ink);padding:20px;display:flex;flex-direction:column}
+.card .ph{min-height:46px;width:46px;margin-bottom:12px}
+.card p{font-size:14px}
+.tbd{border-bottom:1px dashed var(--line);color:var(--mid);font-style:italic}
+.lines{display:grid;gap:6px;margin-bottom:14px}.lines i{height:8px;background:var(--fill);display:block}.lines i:last-child{width:60%}
+.scroll{display:flex;gap:18px;overflow-x:auto;padding-bottom:14px}.scroll .card{flex:0 0 260px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.band{border:2px solid var(--ink);background:var(--card);padding:28px;margin-top:48px}
+.tag{position:absolute;top:10px;left:10px;border:2px solid var(--ink);background:var(--card);padding:0 8px;font-size:12px;font-weight:700;z-index:1}
+.pcard{background:var(--card);border:2px solid var(--ink);position:relative}
+.pcard .ph{border:0;border-bottom:2px dashed var(--line);min-height:180px}
+.pcard .b{padding:16px}
+.pfoot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.why{display:grid;gap:14px;margin-top:8px}
+.why div{border-left:4px solid var(--ink);padding:4px 14px;background:var(--card)}
+.why p{margin:0}
+form{display:grid;gap:14px;max-width:480px}
+label{font-weight:700;font-size:14px}
+.field{border:2px solid var(--line);background:var(--card);height:38px}.field.t{height:110px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+/* footer */
+footer{background:#2e2e2e;color:#bbb;padding:40px 0 20px;margin-top:0}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.6fr;gap:28px;padding-bottom:24px;border-bottom:1px solid #555}
+footer h4{color:#fff;margin-bottom:10px}
+footer p{color:#bbb;font-size:13px}
+footer ul{list-style:none;display:grid;gap:6px;font-size:14px}
+footer a{text-decoration:none}
+.soc{display:flex;gap:8px;margin-top:12px}.soc span{width:34px;height:34px;border:2px solid #bbb;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+.copy{padding-top:16px;font-size:13px}
+.note{font-size:12px;color:var(--mid);border:1px dashed var(--line);padding:6px 10px;display:inline-block;margin-bottom:18px;background:#fff}
+@media(max-width:768px){
+ .burger{display:block}
+ .links{display:none;position:absolute;top:56px;left:0;right:0;background:var(--card);flex-direction:column;gap:0;border-bottom:2px solid var(--ink)}
+ .links.open{display:flex}.links li a{display:block;padding:14px 20px;border-top:1px solid var(--line)}
+ .hero,.cols{flex-direction:column;grid-template-columns:1fr}.hero{display:flex}
+ .fgrid{grid-template-columns:1fr}
+ h1{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="wrap">
+  <a class="logo" href="#home"><i></i>HealthHub</a>
+  <button class="burger" id="burger" aria-label="Menu">≡</button>
+  <ul class="links" id="links">
+   <li><a href="#home" data-p="home">Home</a></li>
+   <li><a href="#about" data-p="about">About Us</a></li>
+   <li><a href="#products" data-p="products">Products</a></li>
+   <li><a href="#services" data-p="services">Services</a></li>
+   <li><a href="#contact" data-p="contact">Contact</a></li>
+  </ul>
+ </div>
+</nav>
+
+<!-- HOME -->
+<main>
+<section class="page" id="home"><div class="wrap">
+ <div class="hero">
+  <div>
+   <h1>Make Appointments Easier</h1>
+   <p><span class="tbd">TBA – hero description</span></p>
+   <div class="row"><a class="btn fill" href="#contact">Get Started</a><a class="btn" href="#about">Learn More</a></div>
+  </div>
+  <div class="ph x"><span>[ Hero image – TBA ]</span></div>
+ </div>
+
+ <h2>Services Offered</h2>
+ <div class="scroll">
+  <div class="card"><div class="ph x"></div><h3>General consultation</h3><div class="lines"><i></i><i></i></div><a href="#services">Read details →</a></div>
+  <div class="card"><div class="ph x"></div><h3>Maternal and Prenatal Care</h3><div class="lines"><i></i><i></i></div><a href="#services">Read details →</a></div>
+  <div class="card"><div class="ph x"></div><h3>Vaccination</h3><div class="lines"><i></i><i></i></div><a href="#services">Read details →</a></div>
+  <div class="card"><div class="ph x"></div><h3>Priority Check-up for Senior Citizens</h3><div class="lines"><i></i><i></i></div><a href="#services">Read details →</a></div>
+  <div class="card"><div class="ph x"></div><h3>Medical Certificate</h3><div class="lines"><i></i><i></i></div><a href="#services">Read details →</a></div>
+ </div>
+
+ <div class="band">
+  <h2>Our Mission</h2>
+  <p>At HealthHub, our mission is to empower individuals and communities by making quality healthcare accessible, transparent, and effortlessly manageable.</p>
+  <p>We believe that navigating your health should never be overwhelming. By combining innovative technology with compassionate care, we aim to streamline the healthcare experience—connecting patients with trusted medical professionals, facilitating seamless digital access to health records, and fostering proactive wellness habits for life.</p>
+ </div>
+</div></section>
+
+<!-- ABOUT -->
+<section class="page" id="about"><div class="wrap">
+ <h1>Welcome to HealthHub, where modern technology meets compassionate healthcare.</h1>
+ <p>Founded on the principle that quality care should be seamless, secure, and accessible to everyone, HealthHub is a digital wellness platform designed to transform how patients and healthcare providers connect. We eliminate the traditional friction of managing your health—replacing long wait times, scattered medical records, and fragmented care with an intuitive, all-in-one digital ecosystem.</p>
+ <p>Whether you are looking to consult with certified specialists, manage your medical history, or take proactive steps toward a healthier lifestyle, HealthHub provides the tools and support you need at every step of your wellness journey.</p>
+
+ <div class="band">
+  <h2>Why HealthHub?</h2>
+  <div class="why">
+   <div><h3>Comprehensive Care Ecosystem</h3><p>From routine check-ups and specialized virtual consultations to centralized digital health records, we bring your entire healthcare experience under one roof.</p></div>
+   <div><h3>Patient-First Experience</h3><p>We design every feature around user simplicity, ensuring that navigating your health journey is stress-free, transparent, and responsive to your needs.</p></div>
+   <div><h3>Uncompromised Security</h3><p>Your health data is protected by rigorous enterprise-grade security standards and privacy protocols, keeping your medical information strictly confidential.</p></div>
+   <div><h3>Empowering Providers</h3><p>We equip medical professionals with streamlined administrative tools, allowing them to focus less on paperwork and more on delivering exceptional patient care.</p></div>
+  </div>
+ </div>
+</div></section>
+
+<!-- PRODUCTS -->
+<section class="page" id="products"><div class="wrap">
+ <h2>Our Products</h2>
+ <div class="grid">
+  <div class="pcard"><span class="tag">SALE</span>
+   <div class="ph x"><span>[ Product Image ]</span></div>
+   <div class="b"><h3>Pulse Oximeter</h3>
+    <div class="pfoot"><strong>P 199</strong><button class="btn fill">Add to Cart</button></div></div>
+  </div>
+  <div class="pcard">
+   <div class="ph x"><span>[ Product Image ]</span></div>
+   <div class="b"><h3>Blood Pressure Monitor</h3>
+    <div class="pfoot"><strong>P 449</strong><button class="btn fill">Add to Cart</button></div></div>
+  </div>
+ </div>
+ <p class="note" style="margin-top:22px">Note: the keyboard looks like template placeholder content – replace with a real health product.</p>
+</div></section>
+
+<!-- SERVICES -->
+<section class="page" id="services"><div class="wrap">
+ <h2>Services We Offer</h2>
+ <div class="grid">
+  <div class="card"><h3>General Consultation</h3><p>Get comprehensive primary care, routine health evaluations, and expert medical guidance from certified physicians for everyday health concerns.</p><a href="#">Learn more →</a></div>
+  <div class="card"><h3>Maternal &amp; Prenatal Care</h3><p>Comprehensive care and medical support for expectant mothers—from early pregnancy tracking and routine check-ups to post-natal guidance—ensuring a safe, healthy journey for both mother and baby.</p><a href="#">Learn more →</a></div>
+  <div class="card"><h3>Vaccination &amp; Immunization</h3><p>Stay protected against preventable illnesses with safe, timely vaccines for all ages. Easily schedule routine immunizations, booster shots, and travel vaccines with certified healthcare professionals.</p><a href="#">Learn more →</a></div>
+  <div class="card"><h3>Priority Check-up for Senior Citizens</h3><p>Skip the queue with fast-tracked consultations, comprehensive geriatric evaluations, and dedicated support tailored to the unique health and mobility needs of older adults.</p><a href="#">Learn more →</a></div>
+  <div class="card"><h3>Medical Certificate</h3><p>Request and receive official, verified medical certificates online.</p><a href="#">Learn more →</a></div>
+ </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="page" id="contact"><div class="wrap">
+ <h1>Contact Us</h1>
+ <div class="cols">
+  <form onsubmit="return false">
+   <div><label>Name</label><div class="field"></div></div>
+   <div><label>Email</label><div class="field"></div></div>
+   <div><label>Message</label><div class="field t"></div></div>
+   <button class="btn fill" style="width:max-content">Send message</button>
+  </form>
+  <div>
+   <!--div class="ph x" style="min-height:220px;margin-bottom:16px"><span>[ Map – Bongbong, Pantukan ]</span></div-->
+   <p>📍 Bongbong, Pantukan, Davao de Oro<br>✉️ alnhurlimpao743@gmail.com<br>📞 09911542476</p>
+  </div>
+ </div>
+</div></section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="fgrid">
+   <div><h4>HealthHub</h4><p>Empowering individuals and communities by making quality healthcare accessible, transparent, and effortlessly manageable.</p>
+    <div class="soc"><span>IG</span><span>FB</span><span>TK</span><span>YT</span></div></div>
+   <div><h4>Navigation</h4><ul>
+    <li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#products">Products</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul></div>
+   <div><h4>[ Column TBA ]</h4><ul><li>—</li><li>—</li><li>—</li></ul></div>
+   <div><h4>Contact Us</h4><ul>
+    <li>📍 Bongbong, Pantukan, Davao de Oro</li>
+    <li>✉️ <a href="mailto:alnhurlimpao743@gmail.com">alnhurlimpao743@gmail.com</a></li>
+    <li>📞 <a href="tel:+639911542476">09911542476</a></li></ul></div>
+  </div>
+  <p class="copy">&copy; 2026 HealthHub. All rights reserved.</p>
+ </div>
+</footer>
+
+<script>
+const pages=[...document.querySelectorAll('.page')], links=[...document.querySelectorAll('.links a')],menu=document.getElementById('links');
+function show(){
+  let id=(location.hash||'#home').slice(1);
+  if(!pages.some(p=>p.id===id))id='home';
+  pages.forEach(p=>p.classList.toggle('on',p.id===id));
+  links.forEach(a=>a.classList.toggle('on',a.dataset.p===id));
+  menu.classList.remove('open');
+  window.scrollTo(0,0);
+}
+window.addEventListener('hashchange',show);
+document.getElementById('burger').addEventListener('click',()=>menu.classList.toggle('open'));
+show();
+</script>
+</body>
+</html>
