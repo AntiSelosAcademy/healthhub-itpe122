@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pharmacy</title>
+</head>
+
+<body>
+  <nav class="nav">
+    <!-- Brand Logo -->
+    <div class="navbar-logo">
+      <a href="#">HealthHub</a>
+    </div>
+
+    <!-- Mobile Hamburger Toggle -->
+    <div class="menu-toggle" id="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Links -->
+    <ul class="nav-links" id="nav-links">
+      <li><a href="home.html" >Home</a></li>
+      <li><a href="about_us.html">About Us</a></li>
+      <li><a href="products.html" style="color: #000000">Products</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="cart-nav-item">
+        <button class="cart-btn-trigger" id="open-cart-btn">
+          Cart <span class="cart-badge" id="cart-count">0</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <script>
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    mobileMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+  
+	<!-- Product Cards Section -->
+  <section class="products-section">
+    <div class="section-header">
+      <h2>Our Products</h2>
+    </div>
+
+    <div class="product-grid">
+      
+      <div class="product-card">
+        <div class="product-image">
+          <img src="img/biogesic.jpg">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Biogesic 10'S</h3>
+          <div class="product-footer">
+            <div class="product-price">
+			  <div class="price-unit">₱</div>
+			  <span class="price-current">50</span>
+            </div>
+            <button onclick="addToCart('Biogesic 10 Pack', 50)" class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>	
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="img/Advil_n7wg-qx.png">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Ibuprofen 100'S</h3>
+          <div class="product-footer">
+            <div class="product-price">
+			  <div class="price-unit">₱</div>
+              <span class="price-current">800</span>
+            </div>
+            <button onclick="addToCart('Ibuprofen 100 Pack', 800)" class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>	
+	 
+		<div class="product-card">
+        <div class="product-image">
+          <img src="img/cetirizine_HCI_1__69287.1721780502.png">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Cetirizine Tab</h3>
+          <div class="product-footer">
+            <div class="product-price">
+			  <div class="price-unit">₱</div>
+              <span class="price-current">10</span>
+            </div>
+            <button onclick="addToCart('Cetirizine 10 mg Tab', 10)" class="btn-cart">Add to Cart</button>
+          </div>
+        </div>
+      </div>	
+
+    </div>
+  </section>
+	
+	
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <!-- Brand & Socials -->
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">HealthHub</a>
+        <p>Empowering individuals and communities by making quality healthcare accessible, transparent, and effortlessly manageable.</p>
+		<div class="social-links" style="margin-top: 1.25rem;">
+		  <a href="https://instagram.com target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><img src="svg/logo_insta.svg"></a>
+		  <a href="https://Facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><img src="svg/logo_facebook.svg"></a>
+		  <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Tiktok"><img src="svg/logo_tiktok.svg"></a>
+		  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube"><img src="svg/logo_youtube.svg"></a>
+		</div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about_us.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="footer-column">
+        <h4> </h4>
+        <ul class="footer-links">
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#"></a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <ul class="contact-info">
+          <li>
+            <span class="icon">📍</span>
+            <span>Bongbong, Pantukan, Davao de Oro</span>
+          </li>
+          <li>
+            <span class="icon">✉️</span>
+            <a href="mailto:alnhurlimpao743@gmail.com">alnhurlimpao743@gmail.com</a>
+          </li>
+          <li>
+            <span class="icon">📞</span>
+            <a href="tel:+639911542476">09911542476</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Legal Bar -->
+    <div class="footer-bottom">
+      <p>&copy; 2026 HealthHub. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#"> </a>
+        <a href="#"> </a>
+        <a href="#"> </a>
+      </div>
+    </div>
+  </footer>
+
+<!-- Slide-out Cart Drawer -->
+  <div class="cart-overlay" id="cart-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Health Cart</h3>
+      <button class="cart-close-btn" id="close-cart-btn">&times;</button>
+    </div>
+    <div class="cart-body" id="cart-items-container">
+      <p class="cart-empty-msg">Your cart is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <span id="cart-total-price">₱0.00</span>
+      </div>
+      <button class="btn-checkout" id="proceed-checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal-overlay" id="checkout-modal-overlay">
+    <div class="checkout-modal">
+      <div class="checkout-modal-header">
+        <h3>Appointment & Service Checkout</h3>
+        <button class="checkout-close-btn" id="close-checkout-btn">&times;</button>
+      </div>
+      <form class="checkout-form" id="checkout-form">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" required placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" required placeholder="09911542476">
+        </div>
+        <div class="form-group">
+          <label for="paymentMethod">Payment Method</label>
+          <select id="paymentMethod">
+            <option value="clinic">Pay at Clinic / Cash</option>
+            <option value="gcash">GCash / Digital Wallet</option>
+            <option value="insurance">HMO / Health Insurance</option>
+          </select>
+        </div>
+        <button type="submit" class="checkout-submit-btn">Confirm Order / Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart & Checkout Logic Script -->
+  <script>
+    let cart = [];
+
+    const cartOverlay = document.getElementById('cart-overlay');
+    const cartDrawer = document.getElementById('cart-drawer');
+    const openCartBtn = document.getElementById('open-cart-btn');
+    const closeCartBtn = document.getElementById('close-cart-btn');
+    const cartItemsContainer = document.getElementById('cart-items-container');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotalPrice = document.getElementById('cart-total-price');
+    const proceedCheckoutBtn = document.getElementById('proceed-checkout-btn');
+
+    const checkoutModalOverlay = document.getElementById('checkout-modal-overlay');
+    const closeCheckoutBtn = document.getElementById('close-checkout-btn');
+    const checkoutForm = document.getElementById('checkout-form');
+
+    // Toggle Cart Drawer
+    function toggleCart() {
+      cartDrawer.classList.toggle('active');
+      cartOverlay.classList.toggle('active');
+    }
+
+    openCartBtn.addEventListener('click', toggleCart);
+    closeCartBtn.addEventListener('click', toggleCart);
+    cartOverlay.addEventListener('click', toggleCart);
+
+    // Add item helper (Can be hooked up to any "Add to Cart" or "Book" button)
+    window.addToCart = function(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      updateCartUI();
+      // Automatically open drawer when item is added
+      if (!cartDrawer.classList.contains('active')) {
+        toggleCart();
+      }
+    };
+
+    // Remove item helper
+    window.removeFromCart = function(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    };
+
+    // Update Cart UI
+    function updateCartUI() {
+      cartCount.textContent = cart.reduce((total, item) => total + item.quantity, 0);
+
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `<p class="cart-empty-msg">Your cart is currently empty.</p>`;
+        cartTotalPrice.textContent = '₱0.00';
+        return;
+      }
+
+      let total = 0;
+      cartItemsContainer.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        const row = document.createElement('div');
+        row.className = 'cart-item-row';
+        row.innerHTML = `
+          <div class="cart-item-info">
+            <h4>${item.name}</h4>
+            <div class="cart-item-price">₱${item.price.toLocaleString()} x ${item.quantity}</div>
+          </div>
+          <div class="cart-item-actions">
+            <span>₱${itemTotal.toLocaleString()}</span>
+            <button class="cart-item-remove" onclick="removeFromCart(${index})">Remove</button>
+          </div>
+        `;
+        cartItemsContainer.appendChild(row);
+      });
+
+      cartTotalPrice.textContent = `₱${total.toLocaleString()}`;
+    }
+
+    // Checkout Modal Handling
+    proceedCheckoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      toggleCart(); // Close drawer
+      checkoutModalOverlay.classList.add('active');
+    });
+
+    closeCheckoutBtn.addEventListener('click', () => {
+      checkoutModalOverlay.classList.remove('active');
+    });
+
+    checkoutModalOverlay.addEventListener('click', (e) => {
+      if (e.target === checkoutModalOverlay) {
+        checkoutModalOverlay.classList.remove('active');
+      }
+    });
+
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you! Your health booking/order has been successfully submitted.');
+      cart = [];
+      updateCartUI();
+      checkoutModalOverlay.classList.remove('active');
+      checkoutForm.reset();
+    });
+  </script>
+
+</body>
+</html>
